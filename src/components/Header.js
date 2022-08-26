@@ -24,14 +24,21 @@ export const Header = () => {
 
     const dispatch = useDispatch();
 
+
+
+    //Don't worry about this code, this code from Material UI
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
     };
+   //------------End this code from Material UI
+
+   
 
     const dlt = (id) =>{
         dispatch(DLT(id))
@@ -58,24 +65,13 @@ export const Header = () => {
                         <NavLink to="/" className="text-decoration-none text-light ">Home</NavLink>
 
                     </Nav>
-                    <Badge badgeContent={getdata.length} color="primary" id="basic-button"
-                        aria-controls={open ? 'basic-menu' : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? 'true' : undefined}
-                        onClick={handleClick}>
+
+                    <Badge badgeContent={getdata.length} color="primary" id="basic-button" aria-controls={open ? 'basic-menu' : undefined} aria-haspopup="true"aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
                         <i className="fa-solid fa-cart-shopping text-light" style={{ fontSize: 25, cursor: "pointer" }}></i>
                     </Badge>
 
                 </Container>
-                <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                        'aria-labelledby': 'basic-button',
-                    }}
-                >
+                <Menu id="basic-menu" anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{ 'aria-labelledby': 'basic-button',}}>
 
                     {
                         getdata.length ?

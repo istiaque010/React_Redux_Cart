@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Header } from './components/Header';
-import  Cards  from './components/Cards';
-import CardsDetails   from './components/CardsDetails';
+import { Header } from "./components/Header";
+import Cards from "./components/Cards";
+import CardsDetails from "./components/CardsDetails";
 
-
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-       <Header/>
-       <Routes>
-        <Route path='/' element={<Cards/>}/>
-        <Route path='/cart/:id' element={<CardsDetails/>}/>
-       </Routes>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Cards />} />
+        <Route path="/cart/:id" element={<CardsDetails />} />
+      </Routes>
     </>
-
   );
 }
 
